@@ -40,3 +40,19 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 ```
 kubectl port-forward service/argocd-react  9999:8888
 ```
+
+# Install Argo CD Setup
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+argo cd 
+user :admin 
+password : kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+```
+
+# Deploy Application
+
+```
+kubectl apply -f application-prod.yaml
+
+```

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL : https://gitlab.com/tong.za.hub/argocd-react.git
+    repoURL : https://github.com/tongzahub/argocd-react.git
     targetRevision : HEAD
     path: prod
   destination:
