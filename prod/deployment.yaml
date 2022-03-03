@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: argocd-react
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: argocd-react
+  template:
+    metadata:
+      labels:
+        app: argocd-react
+    spec:
+      containers:
+        - name: argocd-react
+          image: tongzahub/argocd-react:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+      restartPolicy: Always
